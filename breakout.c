@@ -81,17 +81,21 @@ int main(void)
     {
         move(ball, veloX, veloY);
         
-        if ((getX(ball) + RADIUS * 2) >= WIDTH) {
+        if ((getX(ball) + RADIUS * 2) >= WIDTH) 
+        {
             veloX = veloX * -1;
         }
-        else if (getX(ball) <= 0) {
+        else if (getX(ball) <= 0) 
+        {
             veloX = veloX * -1;
         }
-        else if (getY(ball) <= 20) {
+        else if (getY(ball) <= 20) 
+        {
             veloY = veloY * -1;
         }
-        else if ((getY(ball) + RADIUS * 2) >= (HEIGHT - 20)) {
-            lives --;
+        else if ((getY(ball) + RADIUS * 2) >= (HEIGHT - 20)) 
+        {
+            lives--;
             // reset position
             setLocation(ball,WIDTH / 2 - RADIUS, HEIGHT / 2 - RADIUS);
             veloX = drand48() * .05 * 2 - .05 + .01;
@@ -144,9 +148,11 @@ void initBricks(GWindow window)
     string colors[] = {"PINK","RED","ORANGE","YELLOW","GREEN","CYAN","BLUE","MAGENTA"};
     int x;
     int y = 20;
-    for (int i = 0; i < COLS; i ++) {
+    for (int i = 0; i < COLS; i++) 
+    {
         x = 20;
-        for (int j = 0; j < ROWS; j ++) {
+        for (int j = 0; j < ROWS; j++) 
+        {
             GRect brick = newGRect(x, y, 69, 16);
             setColor(brick,colors[i]);
             setFilled(brick, true);
